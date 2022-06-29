@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "预约日程表",
-  "usingComponents": {
-    "data-select": "/components/DataSelect/index",
-    "notice-bar": "/components/NoticeBar/index",
-    "empty": "/components/Empty/index"
-  }
-}

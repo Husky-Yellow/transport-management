@@ -1,1 +1,0 @@
-<view class="transport-notice-bar data-v-4e27cf5a"><view class="van-notice-bar__wrap data-v-4e27cf5a"><view class="van-notice-bar__content transport-ellipsis data-v-4e27cf5a"><slot></slot></view></view></view>
