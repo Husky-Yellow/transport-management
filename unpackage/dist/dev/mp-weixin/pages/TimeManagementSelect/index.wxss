@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* Border Radius */
+/* 透明度 */
+.transport-ellipsis.data-v-6fe11e30 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.two-white-space.data-v-6fe11e30 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.transport-image.data-v-6fe11e30 {
+  position: relative;
+  display: inline-block;
+}
+.transport-image--round.data-v-6fe11e30 {
+  overflow: hidden;
+  border-radius: 50%;
+}
+.transport-image__img.data-v-6fe11e30 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.transport-image--round .transport-image__img.data-v-6fe11e30 {
+  border-radius: inherit;
+}
+.arrow.data-v-6fe11e30 {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 2rpx solid #000;
+  border-right: 2rpx solid #000;
+}
+.right.data-v-6fe11e30 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.left.data-v-6fe11e30 {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.on.data-v-6fe11e30 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.under.data-v-6fe11e30 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.item-text.data-v-6fe11e30 {
+  color: #939596;
+}
+.grey-text.data-v-6fe11e30 {
+  color: #999;
+}
+.font-weight-medium.data-v-6fe11e30 {
+  font-weight: Medium;
+}
+.font-weight-Regular.data-v-6fe11e30 {
+  font-weight: Regular;
+}
+.font-weight-600.data-v-6fe11e30 {
+  font-weight: 600;
+}
+.time-list.data-v-6fe11e30 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+.time-list view.data-v-6fe11e30 {
+  border-radius: 8rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.time-list .show.data-v-6fe11e30 {
+  background-color: #ffffff;
+  color: #333333;
+}
+.time-list .active.data-v-6fe11e30 {
+  background-color: #71d5a1;
+  color: #fff;
+}
+.fix-view.data-v-6fe11e30 {
+  background-color: #ffffff;
+  border-top: 1rpx solid #d8d8d8;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fix-view view.data-v-6fe11e30 {
+  display: flex;
+  align-items: center;
+}
+.fix-view view .red-text.data-v-6fe11e30 {
+  color: #f55547;
+}
+.fix-view button.data-v-6fe11e30 {
+  background-color: #358FEE;
+  color: #fff;
+  border-radius: 50rpx;
+}
+

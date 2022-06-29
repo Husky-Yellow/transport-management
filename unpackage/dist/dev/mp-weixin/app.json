@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/index",
+        "pages/warehouse/index",
+        "pages/my/index",
+        "pages/ManageSchedule/index",
+        "pages/TimeManagement/index",
+        "pages/TimeManagementSelect/index"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "十三余",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#666668",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "selectedColor": "#4890e6",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "预约汇总",
+                "iconPath": "/static/history.png",
+                "selectedIconPath": "/static/history_active.png"
+            },
+            {
+                "pagePath": "pages/warehouse/index",
+                "text": "仓库接收",
+                "iconPath": "/static/warehouse.png",
+                "selectedIconPath": "/static/warehouse_active.png"
+            },
+            {
+                "pagePath": "pages/ManageSchedule/index",
+                "text": "预约日程表",
+                "iconPath": "/static/warehouse.png",
+                "selectedIconPath": "/static/warehouse_active.png"
+            },
+            {
+                "pagePath": "pages/TimeManagement/index",
+                "text": "预约时间管理",
+                "iconPath": "/static/my.png",
+                "selectedIconPath": "/static/my_active.png"
+            }
+        ]
+    },
+    "lazyCodeLoading": "requiredComponents",
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,20 @@
+{
+    "name" : "transport-management",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "mp-weixin" : {
+        "appid" : "wx43691d0fb556b2da",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true,
+        "lazyCodeLoading": "requiredComponents",
+        "optimization":{"subPackages":true}
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "vueVersion" : "2"
+}

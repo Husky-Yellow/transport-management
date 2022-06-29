@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "仓库接收",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tab": "/components/Tab/index",
+    "manage-card": "/components/ManageCard/index",
+    "model": "/components/Model/index",
+    "empty": "/components/Empty/index"
+  }
+}

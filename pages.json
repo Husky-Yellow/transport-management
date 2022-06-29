@@ -1,0 +1,86 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "预约历史",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/warehouse/index",
+      "style": {
+        "navigationBarTitleText": "仓库接收",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/my/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/ManageSchedule/index",
+      "style": {
+        "navigationBarTitleText": "预约日程表"
+      }
+    },
+    {
+      "path": "pages/TimeManagement/index",
+      "style": {
+        "navigationBarTitleText": "预约时间管理"
+      }
+    },
+    {
+      "path": "pages/TimeManagementSelect/index",
+      "style": {
+        "navigationBarTitleText": "预约时间管理选择"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#666668",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#4890e6",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "预约汇总",
+        "iconPath": "/static/history.png",
+        "selectedIconPath": "/static/history_active.png"
+      },
+      {
+        "pagePath": "pages/warehouse/index",
+        "text": "仓库接收",
+        "iconPath": "/static/warehouse.png",
+        "selectedIconPath": "/static/warehouse_active.png"
+      },
+      {
+        "pagePath": "pages/ManageSchedule/index",
+        "text": "预约日程表",
+        "iconPath": "/static/warehouse.png",
+        "selectedIconPath": "/static/warehouse_active.png"
+      },
+      {
+        "pagePath": "pages/TimeManagement/index",
+        "text": "预约时间管理",
+        "iconPath": "/static/my.png",
+        "selectedIconPath": "/static/my_active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "十三余",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  }
+}

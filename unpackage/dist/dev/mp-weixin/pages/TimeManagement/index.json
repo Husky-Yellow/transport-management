@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "预约时间管理",
+  "usingComponents": {
+    "empty": "/components/Empty/index"
+  }
+}

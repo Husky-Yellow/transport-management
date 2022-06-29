@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* Border Radius */
+/* 透明度 */
+.transport-ellipsis.data-v-57280228 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.two-white-space.data-v-57280228 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.transport-image.data-v-57280228 {
+  position: relative;
+  display: inline-block;
+}
+.transport-image--round.data-v-57280228 {
+  overflow: hidden;
+  border-radius: 50%;
+}
+.transport-image__img.data-v-57280228 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.transport-image--round .transport-image__img.data-v-57280228 {
+  border-radius: inherit;
+}
+.arrow.data-v-57280228 {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 2rpx solid #000;
+  border-right: 2rpx solid #000;
+}
+.right.data-v-57280228 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.left.data-v-57280228 {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.on.data-v-57280228 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.under.data-v-57280228 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.item-text.data-v-57280228 {
+  color: #939596;
+}
+.grey-text.data-v-57280228 {
+  color: #999;
+}
+.font-weight-medium.data-v-57280228 {
+  font-weight: Medium;
+}
+.font-weight-Regular.data-v-57280228 {
+  font-weight: Regular;
+}
+.font-weight-600.data-v-57280228 {
+  font-weight: 600;
+}
+.tab.data-v-57280228 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 80rpx;
+  border-top: 1rpx solid #eeedf0;
+}
+.list.data-v-57280228 {
+  display: flex;
+  flex-direction: column;
+}
+.list-item-funtion.data-v-57280228 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1rpx solid #eeedf0;
+}
+.list-item-funtion .item-lable.data-v-57280228 {
+  color: #999;
+}
+.list-item-funtion .text-active.data-v-57280228 {
+  color: #358FEE;
+}
+.list-item-funtion .primary-button.data-v-57280228, .list-item-funtion .close-button.data-v-57280228 {
+  border-radius: 10rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.list-item-funtion .primary-button.data-v-57280228 {
+  background-color: #358FEE;
+  color: #fff;
+}
+.list-item-funtion .close-button.data-v-57280228 {
+  border: 1rpx solid #eeedf0;
+}
+.Model-content.data-v-57280228 {
+  text-align: center;
+}
+.Model-content .subscribe-type-text.data-v-57280228 {
+  color: #FAB236;
+}
+.Model-content .pending.data-v-57280228 {
+  color: #f1b350;
+}
+.Model-content .receive.data-v-57280228 {
+  color: #71d5a1;
+}
+.Model-content .reject.data-v-57280228 {
+  color: #f55547;
+}
+

@@ -1,0 +1,107 @@
+@import './mixin.scss';
+/* 行为相关颜色 */
+$uni-color-primary: #007aff;
+$uni-color-success: #4cd964;
+$uni-color-ending: #d2e7cf; // 进行中
+$uni-color-warning: #f0ad4e;
+$uni-color-active: #358FEE;//按钮选中颜色
+$uni-color-error: #dd524d;
+
+/* 文字基本颜色 */
+$uni-text-color:#333;//基本色
+$uni-text-color-primary: #ccaa69;//主色
+$uni-text-color-inverse:#fff;//反色
+$uni-text-color-pending: #FAB236; // 待处理
+$uni-text-color-active: #358FEE; //按钮选中颜色
+$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$uni-text-color-placeholder: #808080;
+$uni-text-color-disable:#939596;
+$uni-text-color-black:#333;
+
+/* 背景颜色 */
+$uni-bg-color:#f7f7f7;
+$uni-bg-color-primary:#358FEE;
+$uni-bg-color-border:#eeedf0;
+$uni-bg-color-white:#ffffff;
+$uni-bg-color-info:#f7f8fa;
+$uni-bg-color-pending: #FAB236; // 待处理
+$uni-bg-color-ending: #bcdea6; // 进行中
+$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-hover:#f1f1f1;//点击状态颜色
+$uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+
+/* 边框颜色 */
+$uni-border-color:#c8c7cc;
+$uni-border-color-white:#c8c7cc;
+$uni-border-color-grey:#F8F8F8;
+$uni-border-color-time:#E0E0E0;
+
+/* Border Radius */
+$uni-border-radius-sm: 2px;
+$uni-border-radius-base: 3px;
+$uni-border-radius-lg: 6px;
+$uni-border-radius-circle: 50%;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+.transport-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.two-white-space{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.transport-image {
+  position: relative;
+  display: inline-block;
+}
+.transport-image--round {
+  overflow: hidden;
+  border-radius: $uni-border-radius-circle;
+}
+.transport-image__img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.transport-image--round .transport-image__img {
+  border-radius: inherit;
+}
+
+.arrow {
+  width:20rpx;
+  height:20rpx;
+  border-top:2rpx solid #000;
+  border-right:2rpx solid #000;
+}
+.right {transform:rotate(45deg)}
+.left {transform:rotate(-135deg)}
+.on {transform:rotate(-45deg)}
+.under {transform:rotate(135deg)}
+
+.item-text{
+  color: $uni-text-color-disable;
+}
+.grey-text{
+  color: $uni-text-color-grey;
+}
+
+.font-weight-medium{
+  font-weight: Medium;
+}
+
+.font-weight-Regular{
+  font-weight: Regular;
+}
+
+.font-weight-600{
+  font-weight: 600;
+}
