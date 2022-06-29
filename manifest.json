@@ -10,8 +10,10 @@
             "urlCheck" : false
         },
         "usingComponents" : true,
-        "lazyCodeLoading": "requiredComponents",
-        "optimization":{"subPackages":true}
+        "lazyCodeLoading" : "requiredComponents",
+        "optimization" : {
+            "subPackages" : true
+        }
     },
     "uniStatistics" : {
         "enable" : false

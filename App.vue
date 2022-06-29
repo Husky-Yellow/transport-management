@@ -1,3 +1,14 @@
+<script>
+	export default {
+		onLaunch: function(e) {
+			console.log('App Launch')
+      console.log('跳转过来的参数⬇️⬇️⬇️⬇️⬇️⬇️⬇️')
+      console.log(e);
+      console.log(JSON.stringify(e));
+		}
+	}
+</script>
+
 <style lang="scss">
 view,
 scroll-view,
