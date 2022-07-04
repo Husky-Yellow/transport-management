@@ -1,5 +1,5 @@
 <template>
-  <view class="p-t-270">
+  <view class="p-t-240">
     <view class="header">
       <view class="header-bar">
         <view class="search-form">
