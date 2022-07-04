@@ -1,5 +1,4 @@
 import { getBaseUrl } from './index';
-import store from '@/store'
 
 /**
  * @param {String} config.url
@@ -8,11 +7,15 @@ import store from '@/store'
  * @returns
  */
 const service = async (config = {}) => {
+	const referrerInfo = uni.getStorageSync('referrerInfo')
 	return new Promise(async (resolve, reject) => {
         // console.log('%cconfig拦截, 拦截: ', 'color:blue', '', config);
         const { url, data = {}, method } = config;
-		if (uni.getStorageSync('token')) {
-			data.token = uni.getStorageSync('token');
+		if (!referrerInfo.id && !referrerInfo.no_status && !referrerInfo.status) {
+			return uni.showToast({
+				title: '身份认证失效,请重新跳转至本小程序',
+				icon: 'none',
+			})
 		}
 		uni.showLoading({
 			mask: true
@@ -39,7 +42,6 @@ const service = async (config = {}) => {
 										title: '身份认证失效,请重新登录',
 										icon: 'none',
 									})
-									store.dispatch('resetToken')
 									return reject('身份认证失效,请重新登录')
 								} else if (res.data.code !== 200) {
 									return reject(res.data.message)
@@ -51,7 +53,6 @@ const service = async (config = {}) => {
 									title: '身份认证失效,请重新登录',
 									icon: 'none',
 								})
-								store.dispatch('resetToken')
 								return reject('身份认证失效,请重新登录')
 							} else if (res.statusCode === 500) {
 								uni.showToast({

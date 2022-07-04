@@ -4,6 +4,7 @@
 			console.log('App Launch')
       console.log('跳转过来的参数⬇️⬇️⬇️⬇️⬇️⬇️⬇️')
       console.log(e);
+      uni.setStorageSync('referrerInfo', e.referrerInfo)
       console.log(JSON.stringify(e));
 		}
 	}
