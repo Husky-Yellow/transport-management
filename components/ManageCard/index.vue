@@ -21,6 +21,10 @@
         <text :class="['fz-32 type-text', typeText(obj.type).class]">{{ typeText(obj.type).text }}</text>
       </view>
       <view class="list-item-body_item p-t-10 p-b-10">
+        <text class="item-text">送货单号</text>
+        <text>{{ obj.num }}</text>
+      </view>
+      <view class="list-item-body_item p-t-10 p-b-10">
         <text class="item-text">数量</text>
         <text>{{ obj.num }}</text>
       </view>
