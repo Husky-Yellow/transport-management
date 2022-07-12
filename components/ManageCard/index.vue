@@ -22,7 +22,7 @@
       </view>
       <view class="list-item-body_item p-t-10 p-b-10">
         <text class="item-text">送货单号</text>
-        <text>{{ obj.num }}</text>
+        <text>{{ obj.delivery_note }}</text>
       </view>
       <view class="list-item-body_item p-t-10 p-b-10">
         <text class="item-text">数量</text>
@@ -136,7 +136,7 @@ export default {
           class: "receive",
           text: "审核通过",
         },
-                3: {
+        3: {
           class: 'reject',
           text: "已拒绝"
         },
@@ -147,6 +147,10 @@ export default {
         5: {
           class: 'reject',
           text: "已拒绝"
+        },
+        9: {
+          class: 'reject',
+          text: "已过期"
         },
       };
       return (

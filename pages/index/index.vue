@@ -6,6 +6,7 @@
           <icon class="icon-small" type="search" size="12"></icon>
           <input
             type="text"
+            v-model="name"
             confirm-type="search"
             placeholder="搜索供应商，送货员，取货员，返修员"
             @confirm="searchList"
@@ -22,42 +23,42 @@
         <view
           :class="[
             'header-picker-time',
-            !startTime && !endTime ? 'grey-text' : '',
+            !time_s && !time_e ? 'grey-text' : '',
           ]"
         >
           <picker
             mode="date"
-            :value="startTime"
+            :value="time_s"
             header-text="开始时间"
-            :start="seventDayStartTime"
-            :end="active === 0 ? seventDayEndTime : seventDayEightTime"
+            :start="active === 0 ? seventDayStartTime : null"
+            :end="seventDayEndTime"
             @change="changeStartTime"
-            @cancel="startTime = null"
+            @cancel="time_s = null"
           >
-            <text>{{ startTime || "所有时间" }}</text>
+            <text>{{ time_s || "所有时间" }}</text>
           </picker>
           <text>~</text>
           <picker
             mode="date"
-            :value="endTime"
+            :value="time_e"
             header-text="结束时间"
             :start="seventDayStartTime"
-            :end="active === 0 ? seventDayEndTime : seventDayEightTime"
+            :end="seventDayEndTime"
             @change="changeEndTime"
-            @cancel="endTime = null"
+            @cancel="time_e = null"
           >
-            <text>{{ endTime || "所有时间" }}</text>
+            <text>{{ time_e || "所有时间" }}</text>
           </picker>
           <view class="arrow"></view>
         </view>
         <picker
-          :class="['header-picker-type', !!typeIndex ? '' : 'grey-text']"
+          :class="['header-picker-type', !!select_type ? '' : 'grey-text']"
           @change="bindPickerChange"
-          @cancel="typeIndex = null"
-          :value="typeIndex"
+          @cancel="select_type = null"
+          :value="select_type"
           :range="typeArr"
         >
-          {{ !!typeIndex ? typeArr[typeIndex] : typeArr[0] }}
+          {{ !!select_type ? typeArr[select_type] : typeArr[0] }}
           <view class="arrow"></view>
         </picker>
       </view>
@@ -131,22 +132,8 @@ import ManageCard from "@/components/ManageCard";
 import Model from "@/components/Model";
 import Empty from "@/components/Empty";
 import { warehouseOrderCommonOrder, warehouseOrderWarehouse } from "@/api";
-const selectDayObj = (num = 7) => {
-  const date1 = new Date();
-  //今天时间
-  const startTime =
-    date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();
-  const date2 = new Date(date1);
-  date2.setDate(date1.getDate() + num);
-  //num是正数表示之后的时间，num负数表示之前的时间，0表示今天
-  const endTime =
-    date2.getFullYear() + "-" + (date2.getMonth() + 1) + "-" + date2.getDate();
-  console.log(endTime);
-  return {
-    startTime,
-    endTime,
-  };
-};
+import { selectDayObj } from "@/utils";
+
 export default {
   components: {
     Tab,
@@ -157,18 +144,18 @@ export default {
   data: () => ({
     list: ["待审核", "已通过", "已拒绝", "已过期"],
     typeArr: ["全部类型", "送货预约", "取货预约", "返修预约"],
-    typeIndex: 0,
-    startTime: null,
-    endTime: null,
+    select_type: 0, // 0是全部,1预约2取货3维修
+    time_s: null,
+    time_e: null,
+    name: null,
+    seventDayStartTime: selectDayObj().startTime,
+    seventDayEndTime: selectDayObj().endTime,
     active: 0,
     orderArr: [],
     page: 1,
     onReachBottomTimer: null,
     showTextmsg: false,
     cancelId: null,
-    seventDayStartTime: selectDayObj().startTime,
-    seventDayEndTime: selectDayObj().endTime,
-    seventDayEightTime: selectDayObj(8).endTime,
     textmsg: {
       showType: "",
       title: "提示",
@@ -197,23 +184,41 @@ export default {
     this.getData();
   },
   methods: {
+    searchList() {
+      this.page = 1
+      this.getData();
+    },
     bindPickerChange(e) {
-      this.typeIndex = e.detail.value;
+      this.select_type = e.detail.value;
+      this.searchList();
     },
     changeStartTime(e) {
-      this.startTime = e.detail.value;
+      this.time_s = e.detail.value;
+      this.searchList();
     },
     changeEndTime(e) {
-      this.endTime = e.detail.value;
+      this.time_e = e.detail.value;
+      this.searchList();
     },
     getData() {
+      const statusMap = {
+        0:1,
+        1:2,
+        2:3,
+        3:9
+      }
+      const status = statusMap[this.active]
       warehouseOrderCommonOrder({
         page: this.page,
         num: 10,
-        status: this.active + 1,
+        status,
+        select_type: this.select_type,
+        time_s: this.time_s,
+        time_e: this.time_e,
+        name: this.name,
       }).then((res) => {
         if (this.page === 1) {
-          this.orderArr = [];
+          this.orderArr = []
         }
         if (res.ret.data.length === 0) {
           return uni.showToast({
@@ -228,9 +233,10 @@ export default {
       this.active = index;
       this.page = 1;
       this.orderArr = [];
-      this.startTime = "";
-      this.endTime = "";
-      this.typeIndex = null;
+      this.select_type = 0,
+      this.time_s = null,
+      this.time_e = null,
+      this.name = null,
       this.getData();
     },
     openModel(item, showType) {

@@ -73,7 +73,7 @@ export default {
     },
     goTimeManagementSelect(item) {
       uni.navigateTo({
-        url: `/functionPage/TimeManagementSelect/index?timeDay=${item.date}&id=${item.id}`,
+        url: `/pages/TimeManagementSelect/index?timeDay=${item.date}&id=${item.id}`,
       });
     },
   },

@@ -48,8 +48,8 @@
       {
         "pagePath": "pages/warehouse/index",
         "text": "仓库接收",
-        "iconPath": "/static/warehouse.png",
-        "selectedIconPath": "/static/warehouse_active.png"
+        "iconPath": "/static/history.png",
+        "selectedIconPath": "/static/history_active.png"
       },
       {
         "pagePath": "pages/ManageSchedule/index",

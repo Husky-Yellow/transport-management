@@ -51,3 +51,23 @@ export const isMobile = (phonenum) => /^1\d{10}$/.test(phonenum);
     timerId = setTimeout(() => { flag = true},wait)
   }
 }
+
+/**
+ * 获取今天几几天后的日期
+ * @param {*} num
+ * @returns
+ */
+ export const selectDayObj = (num = 7) => {
+  const date1 = new Date();
+  //今天时间
+  const startTime = `${date1.getFullYear()}-${date1.getMonth() + 1}-${date1.getDate()}`
+  const date2 = new Date(date1);
+  date2.setDate(date1.getDate() + num);
+  //num是正数表示之后的时间，num负数表示之前的时间，0表示今天
+  const endTime =
+  `${date2.getFullYear()}-${date2.getMonth() + 1}-${date2.getDate()}`
+  return {
+    startTime,
+    endTime,
+  };
+};
