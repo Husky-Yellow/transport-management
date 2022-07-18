@@ -8,6 +8,12 @@
       }
     },
     {
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+    {
       "path": "pages/warehouse/index",
       "style": {
         "navigationBarTitleText": "仓库接收",

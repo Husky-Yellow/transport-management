@@ -1,5 +1,16 @@
 import request from "@/utils/request";
 
+/** 登陆
+ * @param {String} data.name 账户
+ * @param {String} data.password 密码
+ */
+ export const login = data => request({
+    url: '/Home/Api/login',
+    method: "POST",
+    hotUrl: 'https://ssy.13yu.com/index.php',
+    data
+})
+
 /** 供应商预约时间展示,仓库也是
  * @link https://www.showdoc.com.cn/1905271757088925/8942306832145789
  */

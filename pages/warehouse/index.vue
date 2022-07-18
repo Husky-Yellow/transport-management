@@ -204,6 +204,9 @@ export default {
         time_e: this.time_e,
         name: this.name,
       }).then((res) => {
+        if (this.page === 1) {
+          this.orderArr = []
+        }
         if (res.ret.data.length === 0) {
           return uni.showToast({
             title: '没有更多数据了',

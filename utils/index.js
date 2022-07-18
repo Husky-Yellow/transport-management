@@ -1,4 +1,3 @@
-export const getBaseUrl = () => "http://180.76.185.112";
 
 /** 格式化数字
  * @param {date} n 时间是单天的增加0 例: 6-1
