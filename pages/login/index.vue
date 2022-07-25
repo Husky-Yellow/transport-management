@@ -14,8 +14,8 @@
 
 export default {
   data: () => ({
-    name: "小黄",
-    password: "123456123",
+    name: "",
+    password: "",
   }),
   methods: {
     Login() {

@@ -1,6 +1,5 @@
 import store from '@/store'
-const getBaseUrl = "https://rfid.13yu.com";
-const getDevUrl =  "http://180.76.185.112";
+const getBaseUrl = "https://yysh.13yu.com";
 
 /**
  * @param {String} config.url
@@ -41,7 +40,7 @@ const service = async (config = {}) => {
 						data
 					});
                     await uni.request({
-						url: `${config.hotUrl || getDevUrl}${url}`,
+						url: `${config.hotUrl || getBaseUrl}${url}`,
 						data,
 						method,
 						complete(res) {
