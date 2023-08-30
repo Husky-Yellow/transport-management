@@ -13,7 +13,7 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    margin-top: 20vh;
+    margin-top: 18%;
     padding: 40px 0;
     .el-empty__image{
         width: 140px;

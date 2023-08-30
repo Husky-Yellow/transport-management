@@ -8,6 +8,12 @@
       }
     },
     {
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+    {
       "path": "pages/warehouse/index",
       "style": {
         "navigationBarTitleText": "仓库接收",
@@ -48,8 +54,8 @@
       {
         "pagePath": "pages/warehouse/index",
         "text": "仓库接收",
-        "iconPath": "/static/warehouse.png",
-        "selectedIconPath": "/static/warehouse_active.png"
+        "iconPath": "/static/history.png",
+        "selectedIconPath": "/static/history_active.png"
       },
       {
         "pagePath": "pages/ManageSchedule/index",

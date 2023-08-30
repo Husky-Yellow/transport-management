@@ -1,19 +1,29 @@
-import { getBaseUrl } from './index';
 import store from '@/store'
+const getBaseUrl = "https://yysh.13yu.com";
 
 /**
  * @param {String} config.url
  * @param {Object} config.data
  * @param {String} config.method
+ * @param {String} config.hotUrl
  * @returns
  */
 const service = async (config = {}) => {
 	return new Promise(async (resolve, reject) => {
+		const referrerInfo = uni.getStorageSync('referrerInfo') || null
         // console.log('%cconfig拦截, 拦截: ', 'color:blue', '', config);
         const { url, data = {}, method } = config;
-		if (uni.getStorageSync('token')) {
-			data.token = uni.getStorageSync('token');
+		if (url !== '/Home/Api/login') {
+			if (!referrerInfo || (!referrerInfo.id && !referrerInfo.no_status && !referrerInfo.status)) {
+				uni.showToast({
+					title: '身份认证失效,请重新跳转至本小程序',
+					icon: 'none',
+				})
+				store.dispatch('resetToken')
+				return reject({errMsg: '身份认证失效,请重新跳转至本小程序'})
+			}
 		}
+		data['token_isset'] = '7788521a'
 		uni.showLoading({
 			mask: true
 		});
@@ -26,8 +36,11 @@ const service = async (config = {}) => {
 					})
 					return reject({errMsg: '网络较差，请检查网络'})
 				} else {
+					console.log('参数',{
+						data
+					});
                     await uni.request({
-						url: `${getBaseUrl()}${url}`,
+						url: `${config.hotUrl || getBaseUrl}${url}`,
 						data,
 						method,
 						complete(res) {
@@ -36,23 +49,23 @@ const service = async (config = {}) => {
                             if (res.statusCode === 200) {
 								if (res.data.code === 969) {
 									uni.showToast({
-										title: '身份认证失效,请重新登录',
+										title: '身份认证失效,请重新跳转至本小程序',
 										icon: 'none',
 									})
 									store.dispatch('resetToken')
-									return reject('身份认证失效,请重新登录')
-								} else if (res.data.code !== 200) {
+									return reject('身份认证失效,请重新跳转至本小程序')
+								} else if (res.data.code !== 200 && res.data.code !== '0') {
 									return reject(res.data.message)
 								} else {
 									return resolve(res.data)
 								}
                             } else if (res.statusCode === 405) {
 								uni.showToast({
-									title: '身份认证失效,请重新登录',
+									title: '身份认证失效,请重新跳转至本小程序',
 									icon: 'none',
 								})
 								store.dispatch('resetToken')
-								return reject('身份认证失效,请重新登录')
+								return reject('身份认证失效,请重新跳转至本小程序')
 							} else if (res.statusCode === 500) {
 								uni.showToast({
 									title: '接口报错,请联系管理员',

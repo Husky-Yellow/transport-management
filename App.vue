@@ -1,11 +1,15 @@
 <script>
 	export default {
-		onLaunch: function(e) {
-			console.log('App Launch')
+    onShow: function(e) {
       console.log('跳转过来的参数⬇️⬇️⬇️⬇️⬇️⬇️⬇️')
       console.log(e);
-      console.log(JSON.stringify(e));
-		}
+      console.log(JSON.stringify(e.referrerInfo.extraData));
+      if (e?.referrerInfo?.extraData?.userinfo) {
+        uni.setStorageSync('referrerInfo', e?.referrerInfo?.extraData?.userinfo)
+      }else{
+        uni.setStorageSync('referrerInfo', {})
+      }
+    },
 	}
 </script>
 
@@ -44,7 +48,7 @@ page {
 }
 
 
-@for $i from 0 through 190 {
+@for $i from 0 through 280 {
   .m-#{$i} {
     margin: ($i) + rpx;
   }
